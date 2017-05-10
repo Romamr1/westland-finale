@@ -1,0 +1,49 @@
+<div id="kandidate">
+  <div id="parent">
+    <div id="topKandidateSection">
+      <h2>Vind jouw baan...</h2>
+      <form id="kandidateForm" submit="">
+        <div id="KandidateFormSec1">
+          <label>Trefwoord <input type="text" name="filter" id="textFilter" /></label>
+          <br />
+          <div><a (click)="openCustom()" class="bold upload-cv">Upload hier uw CV</a></div>                    
+        </div>
+        <div id="KandidateFormSec2">
+          <a href="/vacatures" class="kandidateFormButton">Zoek...</a><br />
+          <a href="/vacatures" class="kandidateFormButton">filter</a>
+        </div>
+      </form>
+      
+
+    </div>
+      <h2 class="">Op zoek naar uw droombaan?</h2><br />
+      <h2>Kijk in ons vacatureoverzicht en reageer direct of doe een open sollicitatie.</h2><br />
+      <h2>U bent hier aan het juiste adres voor het grootste vacatureaanbod van het Westland.</h2><br />
+      <h2>Wij hebben vacatures in de tuinbouw, techniek, bouw, ICT, logistiek, P&O,
+        transport en meer in o.a. Monster, Naaldwijk, Maasdijk, Honselersdijk, 's-Gravenzande,
+        Heenweg, De Lier, Ter Heijde, Kwintsheul en Wateringen.</h2>
+
+
+
+  </div>
+
+  <div id="vacSection">
+    <div class="kandidate-header">
+      <h2 class="kandidate-header">Uitgelichte vacatures</h2>
+    </div>
+    <div>
+      <div *ngFor="let vacancy of vacancies" class="vacancy" [routerLink]="['/vacatures', vacancy.id]">
+        <p class="salary bold">{{vacancy.salary}}</p>
+        <p class="jobTitle">{{vacancy.jobTitle}}</p>
+        <p class="bold">{{vacancy.functionTitle}}</p>
+        <p>{{vacancy.company}}</p>
+        <p class="bold">{{vacancy.place}}</p>
+        <p>{{vacancy.education}} {{vacancy.contactOfService}}</p>        
+        <p>{{vacancy.contactInformation}}</p>
+      </div>
+    </div>
+  </div>
+  <!-- <form>
+    <input type="file" name="photo" multiple accept="image/*,image/jpeg">
+  </form> -->
+</div>

@@ -1,0 +1,79 @@
+<div id="parentVacancies">
+  <div id="filterSection">
+      <div class="filterVacancies">
+        <h3 class="filterTitle">Filter</h3>
+        <form class="filterFormVacancies">
+          <div class="formItemVacancies">
+            <label for="trefwoord">Trefwoord</label>
+            <input type="text" name="trefwoord" />
+          </div>
+          <div class="formItemVacancies">
+            <label for="locatie">Locatie</label>
+            <input type="text" name="locatie" />
+          </div>
+          <br />
+          <button class="filterFormButtonVacancies">Zoek...</button>
+        </form>
+      </div>
+      <div class="filterVacancies" id="secondFilterSectionVacancies">
+        <h3 class="filterTitle">Branches</h3>
+        <form>
+            <label><input type="checkbox" name="tuinbouw" />Tuinbouw</label><br />
+            <label><input type="checkbox" name="techniek" />Techniek</label><br />
+            <label><input type="checkbox" name="bouw" />Bouw</label><br />
+            <label><input type="checkbox" name="ict" />ICT</label><br />
+            <label><input type="checkbox" name="logistiek" />Logistiek</label><br />
+            <label><input type="checkbox" name="pso" />P&O</label><br />
+            <label><input type="checkbox" name="transport" />Transport</label><br />
+        </form>
+      </div>
+      <div class="filterVacancies" id="thirdFilterSectionVacancies">
+        <h3 class="filterTitle">Education/Degree</h3>
+        <form>
+            <label><input type="checkbox" name="mbo" />MBO</label><br />
+            <label><input type="checkbox" name="hbo" />HBO</label><br />
+            <label><input type="checkbox" name="universiteit" />Universiteit</label><br />
+        </form>
+      </div>
+      <div class="filterVacancies" id="fourthFilterSectionVacancies">
+        <h3 class="filterTitle">Contract of service</h3>
+        <form>
+            <label><input type="checkbox" name="parttime" />Parttime</label><br />
+            <label><input type="checkbox" name="fulltime" />Fulltime</label><br />
+            <label><input type="checkbox" name="stage" />Stage</label><br />
+            <label><input type="checkbox" name="traineeship" />Traineeship</label><br />
+        </form>
+      </div>
+      <div class="filterVacancies" id="fifthFilterSectionVacancies">
+          <h3 class="filterTitle">Experience</h3>
+          <form>
+              <select size="1">
+                <option value="2" selected> 0-2 jaar</option>
+                <option value="5"> 3-5 jaar</option>
+                <option value="10"> 6-10 jaar</option>
+                <option value="11"> >10 jaar</option>
+              </select>
+          </form>
+      </div>
+      <div class="filterVacancies" id="sixthFilterSectionVacancies">
+          <h3 class="filterTitle">Zipcode</h3>
+          <form>
+              <input type="text" name="zipCode" />
+          </form>
+      </div>
+  </div>
+  <div id="vacSectionVacancies">
+    <div>
+      <div *ngFor="let vacancy of vacancies" class="vacancyVacancies">
+        <p class="salary bold">{{vacancy.salary}}</p>
+        <p class="jobTitle">{{vacancy.jobTitle}}</p>
+        <p class="bold">{{vacancy.functionTitle}}</p>
+        <p>{{vacancy.company}}</p>
+        <p class="bold">{{vacancy.place}}</p>
+        <p>{{vacancy.education}} {{vacancy.contactOfService}}</p>
+        <p>{{vacancy.functionDescription}}</p>
+        <p>{{vacancy.contactInformation}}</p>
+      </div>
+    </div>
+  </div>
+</div>
