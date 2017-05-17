@@ -50,7 +50,7 @@
 }
 
 #choose {
-  width: 500px;
+  width: 600px;
   height: 120px;
   padding: 30px;
   margin: auto;
@@ -102,16 +102,61 @@
 #kandidate {
   display: flex;
   flex-direction: column;
+  padding: 20px;
   background: url(/assets/css/img/kandidate-background.jpg) no-repeat;
   
 }
 
-.kandidate-header{
+.firstTextKandidate {
+  color: #1794AC;
+  font-size: 53px;
+  text-indent: 10%;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.secondTextKandidate {
+  color: #0C0C0B;
+  text-align: right;
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 5px;
+}
+
+.thirdTextKandidate {
+  color: #FCFBFA;
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 5px;
+
+}
+.thirdTextKandidateIndent{
+  text-indent: 15%;
+}
+
+.hr1 {
+  border: none;
+  background-color: #1794AC;  
+  height: 4px;
+  width: 100%;
+  color: #1794AC;
+}
+
+.hr2 {
+  border: none;
+  background-color: #1794AC;  
+  height: 4px;
+  width: 70%;
+  color: #1794AC;
+}
+
+.kandidate-header {
+  width: 280px;
   margin-right: auto;
   margin-left: auto;
-  width: 250px;
-  height: auto;
 }
+
+
 
 #vacSection {
   background: #EBEBEB;
@@ -154,16 +199,17 @@
 #topKandidateSection h2 {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40px;
 }
 
 #topKandidateSection {
-  float: right;
+  margin-right: auto;
+  margin-left: auto;
   background: #FBFBFB;
   opacity: 0.9;
   min-width: 680px;
   height: 210px;
-  border: 1px solid #000;
-  margin: 40px 20px 40px auto;
+  border: 1px solid #000;  
   text-align: center;
 }
 
@@ -171,27 +217,8 @@
   padding-left: 20px;
 }
 
-#kandidateForm {
-  display: flex;
-}
-
-#kandidateFormSec1 {
-  order: 1;
-  text-align: left;
-  margin: 10px 50px 10px 40px;
-}
-#kandidateFormSec2 {
-  order: 2;
-  text-align: left;
-  margin: 10px 50px 10px 20px;
-}
-
-#kandidateFormSec1 input {
-  margin-bottom: 30px;
-}
-
-#kandidateFormSec2 button {
-  margin-bottom: 10px;
+.kandidateFormSec {
+  margin-bottom: 20px;
 }
 
 #textFilter {
@@ -199,10 +226,7 @@
   border-bottom: 1px solid #000;
 }
 
-.kandidateFormButton {
-  min-width: 100px;
-  text-align: center;
-  height: 25px;
+.kandidateFormButton {  
   font-size: 16px;
   font-family: 'Georgia Bold';
   border: 1px solid #ccc;
@@ -212,7 +236,7 @@
   display: inline-block;
   padding-top: 5px;
   margin-bottom: 10px;
-  color: 000;
+  color: #000;
 }
 
 .kandidateFormButton:hover {

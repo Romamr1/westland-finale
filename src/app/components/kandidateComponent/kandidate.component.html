@@ -1,5 +1,49 @@
 <div id="kandidate">
-  <div id="parent">
+<h1 class="firstTextKandidate">Op zoek naar uw droombaan?</h1>
+
+<h2 class="secondTextKandidate">Kijk in ons vacatureoverzicht en reageer </h2>
+<h2 class="secondTextKandidate">direct of doe een open sollicitatie</h2>
+
+<h2 class="thirdTextKandidate">U bent hier aan het juiste adres voor</h2>
+<h2 class="thirdTextKandidate thirdTextKandidateIndent">het grootste vacatureaanbod van het Westland</h2>
+
+<hr class="hr1">
+
+<h3>Wij hebben vacatures in de tuinbouw, techniek, bouw, ICT, logistiek, P&O, transport en meer in o.a. Monster, Naaldwijk, Maasdijk, Honselersdijk, 's-Gravenzande, Heenweg, De Lier, Ter Heijde, Kwintsheul en Wateringen.</h3>
+
+<hr class="hr2">
+
+<div id="topKandidateSection">
+  <h2>Vind jouw baan...</h2>
+  <form submit="">
+    <div class="row kandidateFormSec">
+      <label class="col-sm-offset-1 col-sm-5">Trefwoord <input type="text" name="filter" id="textFilter" /></label>
+      <a href="/vacatures" class="kandidateFormButton col-sm-offset-2 col-sm-2 btn">Zoek...</a>
+                         
+    </div>
+    <div class="row kandidateFormSec">
+      <a class="col-sm-offset-1 col-sm-5 bold" (click)="openCustom()">Upload hier uw CV</a>
+      <a href="/vacatures" class="kandidateFormButton col-sm-offset-2 col-sm-2 btn">filter</a>
+    </div>
+  </form>
+</div>
+
+<div id="vacSection">  
+  <h2 class="kandidate-header">Uitgelichte vacatures</h2>  
+  <div>
+    <div *ngFor="let vacancy of vacancies" class="vacancy" [routerLink]="['/vacatures', vacancy.id]">
+      <p class="salary bold">{{vacancy.salary}}</p>
+      <p class="jobTitle">{{vacancy.jobTitle}}</p>
+      <p class="bold">{{vacancy.functionTitle}}</p>
+      <p>{{vacancy.company}}</p>
+      <p class="bold">{{vacancy.place}}</p>
+      <p>{{vacancy.education}} {{vacancy.contactOfService}}</p>        
+      <p>{{vacancy.contactInformation}}</p>
+    </div>
+  </div>
+</div>
+
+  <!-- <div id="parent">
     <div id="topKandidateSection">
       <h2>Vind jouw baan...</h2>
       <form id="kandidateForm" submit="">
@@ -43,7 +87,7 @@
       </div>
     </div>
   </div>
-  <!-- <form>
+  <form>
     <input type="file" name="photo" multiple accept="image/*,image/jpeg">
-  </form> -->
-</div>
+  </form>  -->
+<!-- </div> -->
