@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/vendor.a878aeeaf4a0bdc2902b.bundle.js",
+    "postinstall": "ng build --aot -prod",
+    "start": "node dist/server.js",
     // "ng": "ng",
     // "start": "ng serve",
     // "build": "ng build",
@@ -29,7 +30,9 @@
     "core-js": "^2.4.1",
     "express": "^4.15.3",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+    "@angular/cli": "1.0.3",
+    "@angular/compiler-cli": "^4.0.0"
   },
   "devDependencies": {
     "@angular/cli": "1.0.3",
