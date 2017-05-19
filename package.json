@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/inline.85c295b41cf367a60231.bundle.js",
+    "start": "node dist/vendor.a878aeeaf4a0bdc2902b.bundle.js",
     // "ng": "ng",
     // "start": "ng serve",
     // "build": "ng build",
