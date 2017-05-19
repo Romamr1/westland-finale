@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "node dist/main.8c65d7e9ede2db5a29f9.bundle.js",
+    // "ng": "ng",
+    // "start": "ng serve",
+    // "build": "ng build",
+    // "test": "ng test",
+    // "lint": "ng lint",
+    // "e2e": "ng e2e"
   },
   "engines": {
     "node": "6.9.2",
