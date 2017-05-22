@@ -2,15 +2,13 @@
   "name": "westland-werwing",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "postinstall": "ng build --aot -prod",
-    "start": "node dist/server.js",
-    // "ng": "ng",
-    // "start": "ng serve",
-    // "build": "ng build",
-    // "test": "ng test",
-    // "lint": "ng lint",
-    // "e2e": "ng e2e"
+  "scripts": {    
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "engines": {
     "node": "6.9.2",
@@ -26,7 +24,7 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "angular2-modal": "^2.0.3",
+    "angular2-modal": "^2.0.0",
     "core-js": "^2.4.1",
     "express": "^4.15.3",
     "rxjs": "^5.1.0",

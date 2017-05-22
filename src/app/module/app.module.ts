@@ -1,6 +1,8 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule }   from '@angular/forms';
+
 import {Routes, RouterModule} from '@angular/router';
 
 import { AppComponent }   from '../components/app.component';
@@ -14,7 +16,7 @@ import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 
 
-import { AdditionCalculateWindow } from '../components/kandidateComponent/popup-upload-cv/upload-cv';
+import { CustomModal } from '../components/kandidateComponent/popup-upload-cv/upload-cv';
 
 //import { CustomModal } from '../components/kandidateComponent/popup-upload-cv/upload-cv';
 
@@ -29,6 +31,7 @@ const appRoutes: Routes =[
 
 @NgModule({
     imports:      [ BrowserModule, 
+                    FormsModule,
                     RouterModule.forRoot(appRoutes),
                     ModalModule.forRoot(),
                     BootstrapModalModule 
@@ -39,9 +42,9 @@ const appRoutes: Routes =[
                     NotFoundComponent,
                     VacaturesComponent,
                     VacancyComponent,
-                    AdditionCalculateWindow                    
+                    CustomModal                    
                   ],
     bootstrap:    [ AppComponent ],
-    entryComponents: [ AdditionCalculateWindow ]
+    entryComponents: [ CustomModal ]
 })
 export class AppModule { }

@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 
-import { DialogRef, ModalComponent } from 'angular2-modal';
-import { BSModalContext } from 'angular2-modal/plugins/bootstrap';
+import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
 
-export class AdditionCalculateWindowData extends BSModalContext {
-  constructor(public num1: number, public num2: number) {
-    super();
-  }
+export class CustomModalContext {
+  
 }
 
 @Component({
@@ -50,19 +47,49 @@ export class AdditionCalculateWindowData extends BSModalContext {
     `],
   templateUrl: './upload-cv.html',
 })
-export class AdditionCalculateWindow implements ModalComponent<AdditionCalculateWindowData> {
-  context: AdditionCalculateWindowData;
+
+
+export class CustomModal implements CloseGuard, ModalComponent<CustomModalContext> {
+  context: CustomModalContext;
 
   public wrongAnswer: boolean;
 
-  constructor(public dialog: DialogRef<AdditionCalculateWindowData>) {
-    this.context = dialog.context;
+  constructor(public dialog: DialogRef<CustomModalContext>) {
+    // this.context = dialog.context;
     this.wrongAnswer = true;
+    dialog.setCloseGuard(this);
   }
 
+  
+  closeModalWindow() {
+    console.log('nn,nm');
+    this.wrongAnswer = false;
+    this.dialog.close();
+  }
+
+
+  beforeClose(): boolean {
+    return this.wrongAnswer;
+  }
+}
+
+
+
+
+  // context: AdditionCalculateWindowData;
+
+  // public wrongAnswer: boolean;
+
+  // constructor(public dialog: DialogRef<AdditionCalculateWindowData>) {
+  //   this.context = dialog.context;
+  //   // this.wrongAnswer = false;
+  //   console.log(this.dialog.onDestroy);
+  // }
+
   // onKeyUp(value) {
+  //   console.log(value);
   //   this.wrongAnswer = value != 5;
-  //   this.dialog.close();
+  //   //this.dialog.close();
   // }
 
 
@@ -70,7 +97,8 @@ export class AdditionCalculateWindow implements ModalComponent<AdditionCalculate
   //   return true;
   // }
 
-  beforeClose(): boolean {
-    return this.wrongAnswer;
-  }
-}
+  // beforeClose(): boolean {
+  //   console.log('hvhbhj');
+  //   return this.wrongAnswer;
+  // }
+// }
