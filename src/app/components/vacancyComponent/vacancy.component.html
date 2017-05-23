@@ -1,11 +1,68 @@
-<h1>it is vacancy {{ id }}</h1>
-<div class="vacancy">
-  <p class="salary bold">{{vacancy.salary}}</p>
-  <p class="jobTitle">{{vacancy.jobTitle}}</p>
-  <p class="bold">{{vacancy.functionTitle}}</p>
-  <p>{{vacancy.company}}</p>
-  <p class="bold">{{vacancy.place}}</p>
-  <p>{{vacancy.education}} {{vacancy.contactOfService}}</p>
-  <p>{{vacancy.functionDescription}}</p>
-  <p>{{vacancy.id}}</p>
+<div id="curentVacancy">
+	<h1>it is vacancy {{ id }}</h1>
+	<div class="vacancyWrap"  *ngIf="vacancyApply">
+		<div class="viewVacancy">
+		  <p class="salary bold">{{vacancy.salary}}</p>
+		  <p class="jobTitle">{{vacancy.jobTitle}}</p>
+		  <p class="bold">{{vacancy.functionTitle}}</p>
+		  <p>{{vacancy.company}}</p>
+		  <p class="bold"><i class="glyphicon glyphicon-map-marker"></i> {{vacancy.place}}</p>
+		  <p>{{vacancy.education}} {{vacancy.contactOfService}}</p>
+		  <p>{{vacancy.functionDescription}}</p>
+		  <p>{{vacancy.id}}</p>
+		</div>
+		<div class="vacancyButtonSection">
+			<button class="vacancyButton">Vorige</button>
+			<button class="vacancyButton vacancyButtonRight" (click)="onApply()">Reageer op een vacature</button>
+		</div>
+	</div>
+	<div class="vacancyWrapApply"  *ngIf="!vacancyApply">
+		<div class="viewVacancyApply">
+		  <p class="salary bold">{{vacancy.salary}}</p>
+		  <p class="jobTitle">{{vacancy.jobTitle}}</p>
+		  <p class="bold">{{vacancy.functionTitle}}</p>
+		  <p>{{vacancy.company}}</p>
+		  <p class="bold"><i class="glyphicon glyphicon-map-marker"></i> {{vacancy.place}}</p>
+		  <p>{{vacancy.education}} {{vacancy.contactOfService}}</p>
+		  <p>{{vacancy.functionDescription}}</p>
+		  <p>{{vacancy.id}}</p>
+		</div>
+
+		<div class="vacancyApplyForm">
+			<form>
+				<div class="row vacancyApplyFormRow">
+					<label class="col-sm-2">Voornaam</label>
+					<input class="col-sm-3" type="" name="">
+					<label class="col-sm-3">Linked-in profile</label>
+					<input class="col-sm-3" type="" name="">
+				</div>
+				<div class="row vacancyApplyFormRow">
+					<label class="col-sm-2">Tussenvoegsel</label>
+					<input class="col-sm-3" type="" name="">					
+					<label class="col-sm-3">Facebook profile</label>
+					<input class="col-sm-3" type="" name="">					
+				</div>
+				<div class="row vacancyApplyFormRow">
+					<label class="col-sm-2">Achternaam</label>
+					<input class="col-sm-3" type="" name="">					
+					<label class="col-sm-3">Twitter</label>
+					<input class="col-sm-3"type="" name="">					
+				</div>
+				<div class="row vacancyApplyFormRow">
+					<label class="col-sm-2">Email</label>
+					<input class="col-sm-3" type="" name="">					
+					<label class="col-sm-3">Youtube Video Link</label>
+					<input class="col-sm-3" type="" name="">				
+				</div>
+				<div class="row vacancyApplyFormRow">
+					<label class="col-sm-2">Onderwerp</label>
+					<textarea rows="3" class="col-sm-9 vacancyApplyFormRowTextArea"></textarea>				
+				</div>
+			</form>
+		</div>
+		<div class="vacancyButtonSection">
+			<button class="vacancyButton" (click)="cansel()">Vorige</button>
+			<button class="vacancyButton vacancyButtonRight" (click)="onApply()">CV Versturen</button>
+		</div>
+	</div>
 </div>

@@ -54,25 +54,24 @@
                 <option value="11"> >10 jaar</option>
               </select>
           </form>
-      </div>
-      <div class="filterVacancies" id="sixthFilterSectionVacancies">
-          <h3 class="filterTitle">Zipcode</h3>
-          <form>
-              <input type="text" name="zipCode" />
-          </form>
-      </div>
+      </div>     
   </div>
   <div id="vacSectionVacancies">
     <div>
-      <div *ngFor="let vacancy of vacancies" class="vacancyVacancies">
+      <div *ngFor="let vacancy of curentVacancies" class="vacancyVacancies" [routerLink]="['/vacatures', vacancy.id]">
         <p class="salary bold">{{vacancy.salary}}</p>
         <p class="jobTitle">{{vacancy.jobTitle}}</p>
         <p class="bold">{{vacancy.functionTitle}}</p>
         <p>{{vacancy.company}}</p>
-        <p class="bold">{{vacancy.place}}</p>
+        <p class="bold"><i class="glyphicon glyphicon-map-marker"></i>{{vacancy.place}}</p>
         <p>{{vacancy.education}} {{vacancy.contactOfService}}</p>
         <p>{{vacancy.functionDescription}}</p>
         <p>{{vacancy.contactInformation}}</p>
+      </div>
+      <div class="navSection">
+        <span (click)="rerender(page.num)" *ngFor="let page of pageCountObj" class="pageNav" [ngClass]="{'activ': curentPage===page.num }">
+          {{page.num}}
+        </span>
       </div>
     </div>
   </div>

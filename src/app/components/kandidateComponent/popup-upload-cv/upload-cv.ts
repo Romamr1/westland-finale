@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { DialogRef, ModalComponent, CloseGuard } from 'angular2-modal';
 
+import { NgForm} from '@angular/forms';
+
 export class CustomModalContext {
   
 }
@@ -54,8 +56,7 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
 
   public wrongAnswer: boolean;
 
-  constructor(public dialog: DialogRef<CustomModalContext>) {
-    // this.context = dialog.context;
+  constructor(public dialog: DialogRef<CustomModalContext>) {   
     this.wrongAnswer = true;
     dialog.setCloseGuard(this);
   }
@@ -67,38 +68,12 @@ export class CustomModal implements CloseGuard, ModalComponent<CustomModalContex
     this.dialog.close();
   }
 
+  onSubmit(uploadCvForm: NgForm){
+    console.log(uploadCvForm.value);
+  }
+
 
   beforeClose(): boolean {
     return this.wrongAnswer;
   }
 }
-
-
-
-
-  // context: AdditionCalculateWindowData;
-
-  // public wrongAnswer: boolean;
-
-  // constructor(public dialog: DialogRef<AdditionCalculateWindowData>) {
-  //   this.context = dialog.context;
-  //   // this.wrongAnswer = false;
-  //   console.log(this.dialog.onDestroy);
-  // }
-
-  // onKeyUp(value) {
-  //   console.log(value);
-  //   this.wrongAnswer = value != 5;
-  //   //this.dialog.close();
-  // }
-
-
-  // beforeDismiss(): boolean {
-  //   return true;
-  // }
-
-  // beforeClose(): boolean {
-  //   console.log('hvhbhj');
-  //   return this.wrongAnswer;
-  // }
-// }

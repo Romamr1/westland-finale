@@ -13,10 +13,21 @@ export class VacancyComponent implements OnInit, OnDestroy {
   id: number;
   vacancy: Vacancy;
   private subscription: Subscription;
+  vacancyApply: boolean = true;
+
   constructor(private activateRoute: ActivatedRoute, private vacancyService: VacancyService){
     this.subscription = activateRoute.params.subscribe(params=>this.id=params['id']);
     console.log(this.id);
   }
+
+  onApply() {
+    this.vacancyApply = false;
+  }
+
+  cansel(){
+    this.vacancyApply = true;
+  }
+
   ngOnInit(){
     this.vacancy = this.vacancyService.getVacancy(this.id - 1);
   }

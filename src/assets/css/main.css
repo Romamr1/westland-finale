@@ -267,6 +267,14 @@
   background-color: #A1D4E2;
 }
 
+.navSection{
+  width: 650px;
+  height: 45px;
+  margin: 40px auto;
+  padding: 5px;
+  border: 1px solid #000;
+}
+
 #filterSection {
   order:1;
   width: 350px;
@@ -341,8 +349,8 @@
 }
 
 #parentVacancies {
-  background: url(/assets/css/img/vacanciesBackground.jpg)no-repeat;
-  background-size: contain;
+  background: url(/assets/css/img/vacanciesBackground.jpg)no-repeat;  
+  background-size: cover;
 }
 
 .modal-content{
@@ -351,4 +359,123 @@
   margin: 200px auto auto auto;
   background: none;
   border:none;
+}
+
+.required{
+  margin-left: 10px;
+  color: red;
+  font-size: 20px;
+}
+
+.routerSection{
+  margin-top: 10px;
+}
+
+.logOutButton {
+  margin-top: 5px;
+  margin-right: 30px;
+}
+
+.pageNav{
+  font-size: 25px;
+  color: #999999;
+  margin-left: 5px;
+}
+
+.pageNav:hover{
+  font-size: 25px;
+  color: #352289;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.activ {
+  color: #000000;
+}
+
+.viewVacancy {
+  width: 700px;
+  height: 550px;
+  opacity: 1;
+  padding: 9px;
+  border: 1px solid #000;
+  background-color: #A1D4E2;
+  margin: auto;
+}
+
+.vacancyWrap{
+  margin: 30px auto;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 1000px;
+  height: 850px;
+  opacity: 1;
+  background-color: #657472;
+  opacity: 0.9;
+}
+
+#curentVacancy {
+  width: 100%;
+  height: 100%;
+   background: url(/assets/css/img/curentVacancy.jpg)no-repeat;  
+  background-size: cover;
+
+}
+
+.vacancyButtonSection{
+  width: 700px;
+  margin: auto;
+  margin-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.vacancyButton {
+  width: 200px;
+  height: 60px;
+}
+
+.vacancyButtonRight{
+  margin-left: 95px;
+}
+
+.vacancyWrapApply{
+  margin: 30px auto;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 1000px;
+  height: 1100px;
+  opacity: 1;
+  background-color: #657472;
+  opacity: 0.9;
+}
+
+.viewVacancyApply{
+  width: 900px;
+  height: 400px;
+  opacity: 1;
+  padding: 9px;
+  border: 1px solid #000;
+  background-color: #A1D4E2;
+  margin: auto;
+
+}
+
+.vacancyApplyForm {
+  width: 750px;
+  height: 400px;
+  opacity: 1;
+  padding: 9px;  
+  background-color: #AFB3B3;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.vacancyApplyFormRow{
+  margin-top: 20px;
+}
+
+.vacancyApplyFormRowTextArea {
+  resize: none;
+  
 }
