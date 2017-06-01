@@ -11,6 +11,8 @@ import { HomeComponent }   from '../components/homeComponent/home.component';
 import { VacaturesComponent }   from '../components/vacaturesComponent/vacatures.component';
 import { VacancyComponent }   from '../components/vacancyComponent/vacancy.component';
 import { NotFoundComponent }   from '../components/notFoundComponent/notFound.component';
+import { EmployerComponent }   from '../components/employerComponent/employer.component';
+
 
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
@@ -24,7 +26,8 @@ import { CustomModal } from '../components/kandidateComponent/popup-upload-cv/up
 const appRoutes: Routes =[
     { path: 'vacatures', component: VacaturesComponent},
     { path: 'vacatures/:id', component: VacancyComponent},
-    { path: 'kendidate', component: KandidateComponent},    
+    { path: 'kendidate', component: KandidateComponent},  
+    { path: 'werkgevers', component: EmployerComponent},  
     { path: '', component: HomeComponent},
     { path: '**', component: NotFoundComponent },
 ];
@@ -42,6 +45,7 @@ const appRoutes: Routes =[
                     NotFoundComponent,
                     VacaturesComponent,
                     VacancyComponent,
+                    EmployerComponent,
                     CustomModal                    
                   ],
     bootstrap:    [ AppComponent ],

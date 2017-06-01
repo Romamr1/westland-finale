@@ -476,6 +476,19 @@
 }
 
 .vacancyApplyFormRowTextArea {
-  resize: none;
-  
+  resize: none;  
+}
+
+#employerSection {
+  margin: 0;  
+  background: url(/assets/css/img/employer.jpg) no-repeat;
+  background-size: cover;  
+}
+
+.secondEmployerSection {
+  font-family: 'Georgia Bold';
+  font-size: 20px;
+  padding: 10px 30px;
+  background-color: #fff;
+  opacity: 0.7;
 }
