@@ -1,19 +1,18 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { VacancyService } from '../../servise/vacancy.service';
-import { Vacancy } from '../../servise/vacancy.service';
+import { VacancyService } from '../../../servise/vacancy.service';
+import { Vacancy } from '../../../servise/vacancy.service';
 
 
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import {  Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
-import { CustomModalContext, CustomModal } from './popup-upload-cv/upload-cv';
+import { CustomModalContext, CustomModal } from '../popup-upload-cv/upload-cv';
 
 @Component({
     selector: 'kandidate-app',
-    templateUrl: './kandidate.component.html',
-    styleUrls: ['./kandidate.component.css'],    
+    templateUrl: './kandidateVacancy.component.html',    
     providers: [VacancyService, Modal]
 })
-export class KandidateComponent implements OnInit {
+export class KandidateVacancyComponent implements OnInit {
   vacancies: Vacancy[] = [];
   
   constructor(
