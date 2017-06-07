@@ -1,6 +1,8 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpModule }   from '@angular/http';
+
 import { FormsModule }   from '@angular/forms';
 
 import {Routes, RouterModule} from '@angular/router';
@@ -66,7 +68,8 @@ const appRoutes: Routes =[
                     FormsModule,
                     RouterModule.forRoot(appRoutes),
                     ModalModule.forRoot(),
-                    BootstrapModalModule 
+                    BootstrapModalModule,
+                    HttpModule
                     ],
     declarations: [ AppComponent,
                     HomeComponent,

@@ -1,3 +1,12 @@
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Response, Headers} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
+
 export class Vacancy {
 
     constructor(
@@ -14,7 +23,10 @@ export class Vacancy {
     ) { }
 }
 
-export class VacancyService{
+@Injectable()
+export class VacancyService {
+
+  constructor(private http: Http){ }
 
     private data: Vacancy[] = [
         {
@@ -139,6 +151,14 @@ export class VacancyService{
         }
     ];
     getData(): Vacancy[] {
+        let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
+        let h1 = this.http.post('http://localhost:51576/api/values/', {}, { headers: headers })
+                        .map((resp:Response)=>resp.json())
+                        .catch((error:any) =>{
+                          return Observable.throw(error);
+                        });
+        console.log(h1);
+
         return this.data;
     }
     getFilterData(): Vacancy[] {
