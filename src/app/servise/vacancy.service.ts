@@ -150,15 +150,35 @@ export class VacancyService {
           salary: 14000
         }
     ];
-    getData(): Vacancy[] {
-        let headers = new Headers({ 'Content-Type': 'application/json;charset=utf-8' });
-        let h1 = this.http.post('http://localhost:51576/api/values/', {}, { headers: headers })
+
+    postData(){
+      let body = {
+          "typeQuery": "filterVacancy", 
+          "id":"", 
+          "keyWord": "title", 
+          "location": "Kiev", 
+          "professionalSector": ["Logistiek","gdfgdfg","educat"], 
+          "education":["Universiteit"],
+          "contractType":["Fulltime"], 
+          "experience":"0-2","skip":1,"limit":10
+        };
+      let headers = new Headers({
+        "content-type": "application/json",
+        "authorization": "Basic cm9vdDo0NDQ0NDQ0",
+        "cache-control": "no-cache",
+        "postman-token": "25057dba-038c-9f6f-3d5e-02cb29896acd"
+      });
+      return this.http.post('http://edu.bionic-university.com:2281/vacancy/filter', body, headers)
                         .map((resp:Response)=>resp.json())
                         .catch((error:any) =>{
                           return Observable.throw(error);
                         });
-        console.log(h1);
 
+    }
+    getData(): Vacancy[] {
+        
+        this.postData()
+          .subscribe((data) => {console.log('werty', data);});
         return this.data;
     }
     getFilterData(): Vacancy[] {
