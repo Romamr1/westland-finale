@@ -499,3 +499,39 @@
   background: url(/assets/css/img/under_construction.jpg) no-repeat;
   background-size: cover;
 }
+
+@media (max-width: 768px)  {
+  .underConstruction {
+    height: 200px;
+    width: 320px;    
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
