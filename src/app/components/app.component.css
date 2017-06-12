@@ -1,0 +1,50 @@
+@media (max-width: 768px)  {
+	#header {
+		width: 320px;
+		height: 200px;
+		display: block;
+	}
+	#header img {
+		width: 320px;
+	}
+	#header div {
+		height: 100px;
+		width: 320px;
+		display: block;
+	}
+
+	.routerSection {
+		display: block;
+		text-align: left;
+		width: 300px;
+		margin-left: 5px;
+		margin-right: 5px;
+
+	}
+	.routerSection4 {
+		display: none;
+	}
+
+	#header .routerSection1, #header .routerSection2, #header .routerSection3 {
+		font-size: 14px;
+		width: 100px;
+		max-width: 100px;
+		padding: 10px 5px;
+		margin: 0;
+		display: inline-block;
+		border: 1px solid #8FCAD4;
+	}
+
+	#header .routerSection1{
+		
+	}
+
+	.active {
+		background-color: #cccccc;
+	}
+
+	#footer{
+		width: 320px;
+	}
+		
+}

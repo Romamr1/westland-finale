@@ -1,0 +1,40 @@
+@media (max-width: 768px)  {
+	#choose h3 {
+		font-size: 30px;
+		color: #ffffff;
+	}
+
+	#homeContent {
+		min-height: 400px;
+	}
+
+	.chooseItem {
+		width: 130px;
+		min-width: 110px;
+		max-width: 140px;
+		margin: 0;
+	}
+
+	#chooseCandidaten {
+    	margin-right: 0;
+    }
+    #HomeSelection {
+    	width: 310px;
+    }
+    .disNone {
+    	display: none;
+    }
+
+    #HomeSelection a {
+    	
+    	width: 140px;
+    }
+
+    .aChooseItem {
+    	width: auto;    	
+    	display: inline-block;
+    	padding: 0;
+    	margin: 5px;
+
+    }
+}

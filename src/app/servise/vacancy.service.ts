@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import {Response, Headers} from '@angular/http';
+import { Http, Headers, RequestOptions, Response, URLSearchParams } from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -160,15 +159,41 @@ export class VacancyService {
           "professionalSector": ["Logistiek","gdfgdfg","educat"], 
           "education":["Universiteit"],
           "contractType":["Fulltime"], 
-          "experience":"0-2","skip":1,"limit":10
+          "experience":"0-2",
+          "skip":1,
+          "limit":10
         };
+
       let headers = new Headers({
-        "content-type": "application/json",
-        "authorization": "Basic cm9vdDo0NDQ0NDQ0",
-        "cache-control": "no-cache",
-        "postman-token": "25057dba-038c-9f6f-3d5e-02cb29896acd"
+        "content-type": "application/json"        
       });
-      return this.http.post('http://edu.bionic-university.com:2281/vacancy/filter', body, headers)
+
+      let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "http://edu.bionic-university.com:2281/vacancy/filter",
+        "method": "POST",
+        "headers": {
+          "cache-control": "no-cache",
+          "postman-token": "0393c704-9959-79a3-bcb6-821b19b34cb9"
+        },
+        data: {
+          "typeQuery": "filterVacancy", 
+          "id":"", "keyWord": "title", 
+          "location": "Kiev", 
+          "professionalSector": ["Logistiek","gdfgdfg","educat"], 
+          "education":["Universiteit"],
+          "contractType":["Fulltime"], 
+          "experience":"0-2","skip":1,
+          "limit":10
+        }
+      }
+
+
+
+
+
+      return this.http.post('http://edu.bionic-university.com:2281/vacancy/filter', body , headers)
                         .map((resp:Response)=>resp.json())
                         .catch((error:any) =>{
                           return Observable.throw(error);
