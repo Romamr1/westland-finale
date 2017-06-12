@@ -1,0 +1,38 @@
+
+@media (max-width: 768px)  {
+	#kandidate {
+		padding: 5px;
+		background-color: #887F7A;		
+	}
+
+	.firstTextKandidate {
+		font-size: 26px;
+	}
+
+	.secondTextKandidate, .thirdTextKandidate {
+		font-size: 22px;
+	}
+
+	h3 {
+		font-size: 16px;
+	}
+	#topKandidateSection {
+		min-width: 300px;
+		width: 300px;
+		margin: 5px;
+		height: 260px;
+	}
+	.uploadCV {
+		display: none;
+	}
+
+	#vacSection {
+		width: 310px;
+	}
+
+	.vacancy {
+		margin: 20px 5px;
+		padding: 5px;
+		width: 298px;
+	}
+}

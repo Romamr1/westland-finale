@@ -13,3 +13,15 @@
 	border-top: 1px solid #1794AC;
 	color: #1794AC;
 }
+
+@media (max-width: 768px)  {
+	.kandidateRouteItem {
+		font-size: 13px;	
+		padding: 0;
+		margin: 5px;
+	}	
+	.kandidateRoute {
+		margin: 0 5px;
+	}
+
+}

@@ -9,7 +9,8 @@ import { CustomModalContext, CustomModal } from '../popup-upload-cv/upload-cv';
 
 @Component({
     selector: 'kandidate-app',
-    templateUrl: './kandidateVacancy.component.html',    
+    templateUrl: './kandidateVacancy.component.html', 
+    styleUrls: ['./kandidateVacancy.component.css'],   
     providers: [VacancyService, Modal]
 })
 export class KandidateVacancyComponent implements OnInit {

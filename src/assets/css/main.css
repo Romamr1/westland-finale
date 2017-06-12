@@ -492,3 +492,10 @@
   background-color: #fff;
   opacity: 0.7;
 }
+
+.underConstruction {
+  height: 700px;
+  margin: 0;  
+  background: url(/assets/css/img/under_construction.jpg) no-repeat;
+  background-size: cover;
+}

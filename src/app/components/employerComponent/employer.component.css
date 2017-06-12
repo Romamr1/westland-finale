@@ -1,8 +1,8 @@
-.kandidateRoute {
+.employerRoute {
 	border-bottom: 1px solid #000;
 }
 
-.kandidateRouteItem {
+.employerRouteItem {
 	text-align: center;
 	text-decoration: none;
 	font-size: 16px;
@@ -12,4 +12,23 @@
 .active {
 	border-top: 1px solid #1794AC;
 	color: #1794AC;
+}
+
+
+
+@media (max-width: 768px)  {
+
+	.routerSection {
+		margin: 0;
+	}
+
+	.employerRouteItem {
+		font-size: 10px;	
+		padding: 0;
+		margin: 5px;
+	}	
+	.employerRoute {
+		margin: 0 5px;
+	}
+
 }

@@ -26,3 +26,13 @@
 	width: 100%;
 	text-align: right;
 }
+
+@media (max-width: 768px)  {
+	.secondEmployerSection {
+		padding: 5px;
+	}
+	p {
+		font-size: 16px;
+	}
+
+}
