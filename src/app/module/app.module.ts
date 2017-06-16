@@ -38,10 +38,10 @@ import { CustomModal } from '../components/kandidateComponent/popup-upload-cv/up
 
 // определение маршрутов
 const kandChildRoutes: Routes = [
-    { path: 'vacancy', component: VacaturesComponent},
-    { path: 'beschikbare', component: BeschikbareComponent}, 
-    { path: 'sollicitatietips', component: SollicitatietipsComponent},
-    { path: 'home', component: KandidateVacancyComponent},
+    { path: '/vacancy', component: VacaturesComponent},
+    { path: '/beschikbare', component: BeschikbareComponent}, 
+    { path: '/sollicitatietips', component: SollicitatietipsComponent},
+    { path: '/home', component: KandidateVacancyComponent},
 ];
 
 const emplChildRoutes: Routes = [
