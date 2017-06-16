@@ -53,12 +53,12 @@ const emplChildRoutes: Routes = [
 
 const appRoutes: Routes =[
     //{ path: 'vacatures', component: VacaturesComponent},
-    { path: '/vacatures/:id', component: VacancyComponent},
-    { path: '/kendidate', component: KandidateComponent},
-    { path: '/kendidate', component: KandidateComponent, children: kandChildRoutes},    
-    { path: '/werkgevers', component: EmployerComponent},  
-    { path: '/werkgevers', component: EmployerComponent, children: emplChildRoutes}, 
-    { path: '/', component: HomeComponent},
+    { path: 'vacatures/:id', component: VacancyComponent},
+    { path: 'kendidate', component: KandidateComponent},
+    { path: 'kendidate', component: KandidateComponent, children: kandChildRoutes},    
+    { path: 'werkgevers', component: EmployerComponent},  
+    { path: 'werkgevers', component: EmployerComponent, children: emplChildRoutes}, 
+    { path: '', component: HomeComponent},
     { path: '**', component: NotFoundComponent },
 ];
 
