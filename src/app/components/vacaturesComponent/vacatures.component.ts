@@ -10,12 +10,28 @@ import { NgForm } from '@angular/forms';
     providers: [VacancyService]
 })
 export class VacaturesComponent implements OnInit {
-	vacancies: Vacancy[] = [];
-	curentVacancies: Vacancy[] = [];
-	pageCount: number = 0;
-	pageCountObj: any[] = [];
-	curentPage:  number = 1;
-	experience: string = '0-2';
+	public vacancies: Vacancy[] = [];
+	public curentVacancies: Vacancy[] = [];
+	public pageCount: number = 0;
+	public pageCountObj: any[] = [];
+	public curentPage:  number = 1;
+	public experience: string = '0-2';
+  public tuinbouw: boolean;
+  public techniek: boolean;
+  public bouw: boolean;
+  public ict: boolean;
+  public logistiek: boolean;
+  public pso: boolean;
+  public transport: boolean;
+  public trefwoord: string;
+  public locatie: string;
+  public mbo: boolean;
+  public hbo: boolean;
+  public universiteit: boolean;
+  public parttime: boolean;
+  public fulltime: boolean;
+  public stage: boolean;
+  public traineeship: boolean;
 
   	constructor(private vacancyService: VacancyService){}
 
@@ -32,8 +48,8 @@ export class VacaturesComponent implements OnInit {
         let body = {
         	"typeQuery": "filterVacancy", 
           	"id":"", 
-          	"keyWord": form.value.trefwoord ? form.value.trefwoord: "",
-          	"location": form.value.locatie ? form.value.locatie: "", 
+          	"keyWord": this.trefwoord ? this.trefwoord: "",
+          	"location": this.locatie ? this.locatie: "", 
           	"professionalSector": [],          	
           	"education":[],          	
           	"contractType":[],          	
@@ -41,25 +57,26 @@ export class VacaturesComponent implements OnInit {
           	"skip":1,
           	"limit":10000
         };
-        if (form.value.tuinbouw) {body.professionalSector.push("tuinbouw")};
-        if (form.value.techniek) {body.professionalSector.push("techniek")};
-        if (form.value.bouw) {body.professionalSector.push("bouw")};
-        if (form.value.ict) {body.professionalSector.push("ict")};
-        if (form.value.logistiek) {body.professionalSector.push("logistiek")};
-        if (form.value.pso) {body.professionalSector.push("pso")};
-        if (form.value.transport) {body.professionalSector.push("transport")};
+        if (this.tuinbouw) {body.professionalSector.push("tuinbouw")};
+        if (this.techniek) {body.professionalSector.push("techniek")};
+        if (this.bouw) {body.professionalSector.push("bouw")};
+        if (this.ict) {body.professionalSector.push("ict")};
+        if (this.logistiek) {body.professionalSector.push("logistiek")};
+        if (this.pso) {body.professionalSector.push("pso")};
+        if (this.transport) {body.professionalSector.push("transport")};
 
 
-        if (form.value.mbo) {body.education.push("mbo")};
-        if (form.value.hbo) {body.education.push("hbo")};
-        if (form.value.universiteit) {body.education.push("universiteit")};
+        if (this.mbo) {body.education.push("mbo")};
+        if (this.hbo) {body.education.push("hbo")};
+        if (this.universiteit) {body.education.push("universiteit")};
 
 
-        if (form.value.parttime) {body.contractType.push("parttime")};
-        if (form.value.fulltime) {body.contractType.push("fulltime")};
-        if (form.value.stage) {body.contractType.push("stage")};
-        if (form.value.traineeship) {body.contractType.push("traineeship")};        
+        if (this.parttime) {body.contractType.push("parttime")};
+        if (this.fulltime) {body.contractType.push("fulltime")};
+        if (this.stage) {body.contractType.push("stage")};
+        if (this.traineeship) {body.contractType.push("traineeship")};        
 
+        console.log(body);
         this.vacancyService.getFilterData(body)
 		    .subscribe(
 		      data => {

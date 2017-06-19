@@ -1,0 +1,531 @@
+#header {
+  height: 100px;
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+
+#firstHeaderSection {
+  order: 1;
+}
+
+#lastHeaderSection {
+  order: 2;
+  margin:auto 5px auto auto;
+}
+
+#header a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #878787;
+  margin-right: 20px;
+  padding-top: 10px;
+  border-top: 2px solid #B7B7B7;
+}
+
+#header a.active {
+  border-top: 2px solid #464646;
+}
+
+#header a:hover {
+    border-top: 2px solid #464646;
+}
+
+#footer {
+  height: 100px;
+  display: flex;
+  border-top: 1px solid #000;
+  padding-top: 10px;
+}
+#lastFooterSection {
+  margin: auto;
+}
+
+
+#footer #lastFooterSection img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border: 1px solid #000;  
+  border-radius: 30px;
+}
+
+#choose {
+  width: 600px;
+  height: 120px;
+  padding: 30px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+#choose h3 {
+  margin: auto 30px;
+  text-align: center;
+}
+
+#HomeSelection {
+  margin-top: 40px;
+  color: rgb(72, 82, 96);
+}
+
+.chooseItem {
+  min-width: 200px;
+  text-align: center;
+  height: 25px;
+  font-size: 13px;
+  font-family: 'Georgia Bold';
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #000;
+}
+.chooseItem:hover {
+  cursor: pointer;
+  background-color: #272E41;
+  color: #fff;
+}
+
+#chooseCandidaten {
+  margin-right: 95px;
+}
+
+#homeContent {
+  margin: 0;
+  min-height: 700px;
+  height: 70%;
+  width: 100%;
+  background: url(/assets/css/img/home-background.jpg) no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+#kandidate {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: url(/assets/css/img/kandidate-background.jpg) no-repeat;
+  
+}
+
+.firstTextKandidate {
+  color: #1794AC;
+  font-size: 53px;
+  text-indent: 10%;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.secondTextKandidate {
+  color: #0C0C0B;
+  text-align: right;
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 5px;
+}
+
+.thirdTextKandidate {
+  color: #FCFBFA;
+  font-weight: bold;
+  font-size: 38px;
+  margin-top: 5px;
+
+}
+.thirdTextKandidateIndent{
+  text-indent: 15%;
+}
+
+.hr1 {
+  border: none;
+  background-color: #1794AC;  
+  height: 4px;
+  width: 100%;
+  color: #1794AC;
+}
+
+.hr2 {
+  border: none;
+  background-color: #1794AC;  
+  height: 4px;
+  width: 70%;
+  color: #1794AC;
+}
+
+.kandidate-header {
+  width: 290px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+#vacSection {
+  background: #EBEBEB;
+  opacity: 0.75;
+  width: 1080px;
+  border: 1px solid #C3C3C3;
+  margin: 40px auto;
+  border: 1px solid #000;
+}
+
+.vacancy {
+  opacity: 1;
+  width: 480px;
+  height: 230px;
+  margin: 20px;
+  padding: 9px;
+  border: 1px solid #000;
+  background-color: #A1D4E2;
+  display: inline-block;
+}
+
+.jobTitle {
+  color: #1794AC;
+  font-size: 18px;
+}
+.vacancy p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.upload-cv{
+  margin-right: auto;
+  margin-left: 80px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#topKandidateSection h2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+#topKandidateSection {
+  margin-right: auto;
+  margin-left: auto;
+  background: #FBFBFB;
+  opacity: 0.9;
+  min-width: 680px;
+  height: 210px;
+  border: 1px solid #000;  
+  text-align: center;
+}
+
+#parent {
+  padding-left: 20px;
+}
+
+.kandidateFormSec {
+  margin-bottom: 20px;
+}
+
+#textFilter {
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.kandidateFormButton {  
+  font-size: 16px;
+  font-family: 'Georgia Bold';
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.kandidateFormButton:hover {
+  cursor: pointer;
+  background-color: #272E41;
+  color: #fff;
+}
+
+#vacSectionVacancies {
+  order:2;
+  background: #EBEBEB;
+  opacity: 0.9;
+  width: 800px;
+  border: 1px solid #C3C3C3;
+  margin: 20px auto;
+}
+
+#vacSectionVacancies p {
+  font-size: 14px;
+}
+
+.vacancyVacancies {
+  width: 650px;
+  height: 230px;
+  margin: 40px auto;
+  padding: 5px;
+  border: 1px solid #000;
+  background-color: #A1D4E2;
+}
+
+.navSection{
+  width: 650px;
+  height: 45px;
+  margin: 40px auto;
+  padding: 5px;
+  border: 1px solid #000;
+}
+
+#filterSection {
+  order:1;
+  width: 350px;
+  margin-top: 20px;
+}
+#parentVacancies{
+  display: flex;
+}
+.filterTitle {
+  background-color: #ccc;
+  margin: 0 auto;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+
+.filterVacancies {
+  margin: auto;
+  width: 90%;
+  border: 1px solid #000;
+}
+.filterFormVacancies {
+  width: 270px;
+  margin: auto;
+}
+
+.filterFormButtonVacancies {
+  width: 100%;
+  text-align: center;
+  height: 25px;
+  font-size: 16px;
+  font-family: 'Georgia Bold';
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.filterFormButtonVacancies:hover {
+  cursor: pointer;
+  background-color: #272E41;
+  color: #fff;
+}
+.filterFormVacancies input{
+  margin-top: 20px;
+  margin-right: 10px;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+.formItemVacancies {
+  clear:both;
+  text-align:right;
+}
+.filterFormVacancies label{
+  margin-top: 20px;
+  float:left;
+}
+#secondFilterSectionVacancies input, #thirdFilterSectionVacancies input, #fourthFilterSectionVacancies input{
+  margin: 10px 0 10px 20px;
+}
+#fifthFilterSectionVacancies select, #sixthFilterSectionVacancies input{
+  width: 150px;
+  height: 30px;
+  margin: 40px 80px;
+  border-radius: 5px;
+}
+.salary {
+  float: right;
+}
+
+#parentVacancies {
+  background: url(/assets/css/img/vacanciesBackground.jpg)no-repeat;  
+  background-size: cover;
+}
+
+.modal-content{
+  width: 700px;
+  height: 400px;
+  margin: 100px auto auto auto;
+  background: none;
+  border:none;
+}
+
+.required{
+  margin-left: 10px;
+  color: red;
+  font-size: 20px;
+}
+
+.routerSection{
+  margin-top: 10px;
+}
+
+.logOutButton {
+  margin-top: 5px;
+  margin-right: 30px;
+}
+
+.pageNav{
+  font-size: 25px;
+  color: #999999;
+  margin-left: 5px;
+}
+
+.pageNav:hover{
+  font-size: 25px;
+  color: #352289;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.activ {
+  color: #000000;
+}
+
+.viewVacancy {
+  width: 700px;
+  height: 550px;
+  opacity: 1;
+  padding: 9px;
+  border: 1px solid #000;
+  background-color: #A1D4E2;
+  margin: auto;
+}
+
+.vacancyWrap{
+  margin: 30px auto;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 1000px;
+  height: 850px;
+  opacity: 1;
+  background-color: #657472;
+  opacity: 0.9;
+}
+
+#curentVacancy {
+  width: 100%;
+  height: 100%;
+   background: url(/assets/css/img/curentVacancy.jpg)no-repeat;  
+  background-size: cover;
+
+}
+
+.vacancyButtonSection{
+  width: 700px;
+  margin: auto;
+  margin-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.vacancyButton {
+  width: 200px;
+  height: 60px;
+}
+
+.vacancyButtonRight{
+  margin-left: 95px;
+}
+
+.vacancyWrapApply{
+  margin: 30px auto;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 1000px;
+  height: 1100px;
+  opacity: 1;
+  background-color: #657472;
+  opacity: 0.9;
+}
+
+.viewVacancyApply{
+  width: 900px;
+  height: 400px;
+  opacity: 1;
+  padding: 9px;
+  border: 1px solid #000;
+  background-color: #A1D4E2;
+  margin: auto;
+
+}
+
+.vacancyApplyForm {
+  width: 750px;
+  height: 400px;
+  opacity: 1;
+  padding: 9px;  
+  background-color: #AFB3B3;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.vacancyApplyFormRow{
+  margin-top: 20px;
+}
+
+.vacancyApplyFormRowTextArea {
+  resize: none;  
+}
+
+#employerSection {
+  margin: 0;  
+  background: url(/assets/css/img/employer.jpg) no-repeat;
+  background-size: cover;  
+}
+
+.secondEmployerSection {
+  font-family: 'Georgia Bold';
+  font-size: 20px;
+  padding: 10px 30px;
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.underConstruction {
+  height: 700px;
+  margin: 0;  
+  background: url(/assets/css/img/under_construction.jpg) no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px)  {
+  .underConstruction {
+    height: 200px;
+    width: 320px;    
+  }
+
+}
+.no-vacancy {
+  text-align: center;
+}
+
+.about {  
+  background: url(/assets/css/img/about-buckground.jpg) no-repeat;
+  background-size: cover;  
+}
+
+.white-section {
+  font-family: 'Georgia Bold';
+  font-size: 20px;
+  padding: 10px 30px;
+  background-color: #fff;
+  opacity: 0.7;
+}
+
+.main-page {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
