@@ -3,12 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {    
-    "ng": "ng",    
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod",
+    "ng": "ng",   
+    "postinstall": "ng build",
     "start": "node server.js"
   },
   "engines": {
