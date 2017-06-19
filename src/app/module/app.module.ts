@@ -10,6 +10,8 @@ import {Routes, RouterModule} from '@angular/router';
 import { AppComponent }   from '../components/app.component';
 
 import { KandidateComponent } from '../components/kandidateComponent/kandidate.component';
+import { OverOnsComponent } from '../components/overOnsComponent/overOns.component';
+
 import { BeschikbareComponent } from '../components/kandidateComponent/beschikbareComponent/beschikbare.component';
 import { KandidateVacancyComponent } from '../components/kandidateComponent/kandidateVacancyComponent/kandidateVacancy.component';
 import { SollicitatietipsComponent } from '../components/kandidateComponent/sollicitatietipsComponent/sollicitatietips.component';
@@ -36,7 +38,6 @@ import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { CustomModal } from '../components/kandidateComponent/popup-upload-cv/upload-cv';
 
 
-// определение маршрутов
 const kandChildRoutes: Routes = [
     { path: 'vacancy', component: VacaturesComponent},
     { path: 'beschikbare', component: BeschikbareComponent}, 
@@ -57,7 +58,8 @@ const appRoutes: Routes =[
     { path: 'kendidate', component: KandidateComponent},
     { path: 'kendidate', component: KandidateComponent, children: kandChildRoutes},    
     { path: 'werkgevers', component: EmployerComponent},  
-    { path: 'werkgevers', component: EmployerComponent, children: emplChildRoutes}, 
+    { path: 'werkgevers', component: EmployerComponent, children: emplChildRoutes},
+    { path: 'about', component: OverOnsComponent},
     { path: '', component: HomeComponent},
     { path: '**', component: NotFoundComponent },
 ];
@@ -85,6 +87,7 @@ const appRoutes: Routes =[
                     EmployerPayrollComponent,
                     EmployerVacaturePlaatsenComponent,
                     EmployerWerknemerComponent,
+                    OverOnsComponent,
                     CustomModal                    
                   ],
     bootstrap:    [ AppComponent ],
