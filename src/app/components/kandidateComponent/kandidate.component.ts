@@ -28,7 +28,7 @@ export class KandidateComponent implements OnInit {
   }
 
 
-  ngOnInit(){
-        this.vacancies = this.vacancyService.getData();
+  ngOnInit(){    
+  
   }
 }

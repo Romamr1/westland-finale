@@ -52,7 +52,7 @@ const emplChildRoutes: Routes = [
 ];
 
 const appRoutes: Routes =[
-    //{ path: 'vacatures', component: VacaturesComponent},
+    { path: 'vacatures', component: VacaturesComponent},
     { path: 'vacatures/:id', component: VacancyComponent},
     { path: 'kendidate', component: KandidateComponent},
     { path: 'kendidate', component: KandidateComponent, children: kandChildRoutes},    

@@ -10,13 +10,13 @@ export class Vacancy {
 
     constructor(
       public id: number,
-      public jobTitle: string,
+      public title: string,
       public functionTitle: string,
-      public company: string,
-      public place: string,
+      public companyName: string,
+      public location: string,
       public education: string,
-      public contactOfService: string,
-      public functionDescription: string,
+      public contractType: string,
+      public whatWeOffer: string,
       public contactInformation: string,
       public salary: number
     ) { }
@@ -27,189 +27,71 @@ export class VacancyService {
 
   constructor(private http: Http){ }
 
-    private data: Vacancy[] = [
-        {
-          id: 1,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 2,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 3,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 4,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 5,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 6,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 7,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 8,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 9,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        },
-        {
-          id: 10,
-          jobTitle: 'Looking for a business analyst!',
-          functionTitle: 'Business analyst',
-          company: 'Alfa bank',
-          place: 'Kiev',
-          education: 'MBO',
-          contactOfService: 'Parttime',
-          functionDescription: 'Personal Assistant to a very dynamic and focused businessperson, Chief HR  Officer of a large diversified Financial-Industrial Group. Excellent opportu ...',
-          contactInformation: 'HR Maria, tel - 0129232424',
-          salary: 14000
-        }
-    ];
+    public headers = new Headers({
+      "content-type": "application/json",
+      "authorization": "Basic MjRAdWtyLm5ldDoyNA=="        
+    });
 
-    postData(){
-      let body = {
-          "typeQuery": "filterVacancy", 
-          "id":"", 
-          "keyWord": "title", 
-          "location": "Kiev", 
-          "professionalSector": ["Logistiek","gdfgdfg","educat"], 
-          "education":["Universiteit"],
-          "contractType":["Fulltime"], 
-          "experience":"0-2",
-          "skip":1,
-          "limit":10
-        };
+    public curentVacancy: Vacancy[]; 
 
-      let headers = new Headers({
-        "content-type": "application/json"        
-      });
-
-      let settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "http://edu.bionic-university.com:2281/vacancy/filter",
-        "method": "POST",
-        "headers": {
-          "cache-control": "no-cache",
-          "postman-token": "0393c704-9959-79a3-bcb6-821b19b34cb9"
-        },
-        data: {
-          "typeQuery": "filterVacancy", 
-          "id":"", "keyWord": "title", 
-          "location": "Kiev", 
-          "professionalSector": ["Logistiek","gdfgdfg","educat"], 
-          "education":["Universiteit"],
-          "contractType":["Fulltime"], 
-          "experience":"0-2","skip":1,
-          "limit":10
-        }
-      }
-
-
-
-
-
-      return this.http.post('http://edu.bionic-university.com:2281/vacancy/filter', body , headers)
+    postData(body){     
+      
+      return this.http.post('http://edu.bionic-university.com:2281/vacancy/filter', body , this.headers)
                         .map((resp:Response)=>resp.json())
                         .catch((error:any) =>{
                           return Observable.throw(error);
                         });
+    }
+    getData() {
+      let body = {
+          "typeQuery": "filterVacancy", 
+          "id":"", 
+          "keyWord": "", 
+          "location": "", 
+          "professionalSector": [], 
+          "education":[],
+          "contractType":[], 
+          "experience":"",
+          "skip":1,
+          "limit":10
+        };       
+      return this.postData(body);       
+    }
 
+    getFilterData( obj: any ) {      
+      return this.postData(obj);
     }
-    getData(): Vacancy[] {
-        
-        this.postData()
-          .subscribe((data) => {console.log('werty', data);});
-        return this.data;
+
+    getVacancy(id: number ) {
+
+      let body = {
+          "typeQuery": "filterVacancy", 
+          "id": id, 
+          "keyWord": "", 
+          "location": "", 
+          "professionalSector": [], 
+          "education":[],
+          "contractType":[], 
+          "experience":"",
+          "skip":1,
+          "limit":1
+        };   
+
+      
+      return this.postData(body);
     }
-    getFilterData(): Vacancy[] {
-        return this.data;
+
+    sendCv(obj: any ) {      
+      return this.postSendCv(obj);
     }
-    getVacancy(id: number ): Vacancy {
-      return this.data[id];
+
+    postSendCv(body){     
+      
+      return this.http.post('http://edu.bionic-university.com:2281/upload/files', body , this.headers)
+                        .map((resp:Response)=>resp.json())
+                        .catch((error:any) =>{
+                          return Observable.throw(error);
+                        });
     }
+
 }

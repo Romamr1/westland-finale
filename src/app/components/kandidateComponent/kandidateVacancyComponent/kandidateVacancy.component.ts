@@ -28,7 +28,14 @@ export class KandidateVacancyComponent implements OnInit {
   }
 
 
-  ngOnInit(){
-        this.vacancies = this.vacancyService.getData();
+  ngOnInit(){   
+    this.vacancyService.getData()
+    .subscribe(
+      data => {
+        this.vacancies = data.vacancies;
+        console.log('tests', data.vacancies);
+      },
+        error => {          
+    });    
   }
 }

@@ -1,74 +1,78 @@
 <div id="parentVacancies">
-  <div id="filterSection">
+  <form id="filterSection" #filter="ngForm">
       <div class="filterVacancies">
         <h3 class="filterTitle">Filter</h3>
-        <form class="filterFormVacancies">
+        <div class="filterFormVacancies">
           <div class="formItemVacancies">
             <label for="trefwoord">Trefwoord</label>
-            <input type="text" name="trefwoord" />
+            <input type="text" name="trefwoord" [(ngModel)]="trefwoord" />
           </div>
           <div class="formItemVacancies">
             <label for="locatie">Locatie</label>
-            <input type="text" name="locatie" />
+            <input type="text" name="locatie" [(ngModel)]="locatie" />
           </div>
           <br />
-          <button class="filterFormButtonVacancies">Zoek...</button>
-        </form>
+          <button class="filterFormButtonVacancies" (click)="submit(filter)">Zoek...</button>
+        </div>
       </div>
       <div class="filterVacancies" id="secondFilterSectionVacancies">
         <h3 class="filterTitle">Branches</h3>
-        <form>
-            <label><input type="checkbox" name="tuinbouw" />Tuinbouw</label><br />
-            <label><input type="checkbox" name="techniek" />Techniek</label><br />
-            <label><input type="checkbox" name="bouw" />Bouw</label><br />
-            <label><input type="checkbox" name="ict" />ICT</label><br />
-            <label><input type="checkbox" name="logistiek" />Logistiek</label><br />
-            <label><input type="checkbox" name="pso" />P&O</label><br />
-            <label><input type="checkbox" name="transport" />Transport</label><br />
-        </form>
+        <div>
+            <label><input type="checkbox" name="tuinbouw" [(ngModel)]="tuinbouw" />Tuinbouw</label><br />
+            <label><input type="checkbox" name="techniek" [(ngModel)]="techniek" />Techniek</label><br />
+            <label><input type="checkbox" name="bouw" [(ngModel)]="bouw" />Bouw</label><br />
+            <label><input type="checkbox" name="ict" [(ngModel)]="ict" />ICT</label><br />
+            <label><input type="checkbox" name="logistiek" [(ngModel)]="logistiek" />Logistiek</label><br />
+            <label><input type="checkbox" name="pso" [(ngModel)]="pso" />P&O</label><br />
+            <label><input type="checkbox" name="transport" [(ngModel)]="transport" />Transport</label><br />
+        </div>
       </div>
       <div class="filterVacancies" id="thirdFilterSectionVacancies">
         <h3 class="filterTitle">Education/Degree</h3>
-        <form>
-            <label><input type="checkbox" name="mbo" />MBO</label><br />
-            <label><input type="checkbox" name="hbo" />HBO</label><br />
-            <label><input type="checkbox" name="universiteit" />Universiteit</label><br />
-        </form>
+        <div>
+            <label><input type="checkbox" name="mbo" [(ngModel)]="mbo" />MBO</label><br />
+            <label><input type="checkbox" name="hbo" [(ngModel)]="hbo" />HBO</label><br />
+            <label><input type="checkbox" name="universiteit" [(ngModel)]="universiteit" />Universiteit</label><br />
+        </div>
       </div>
       <div class="filterVacancies" id="fourthFilterSectionVacancies">
         <h3 class="filterTitle">Contract of service</h3>
-        <form>
-            <label><input type="checkbox" name="parttime" />Parttime</label><br />
-            <label><input type="checkbox" name="fulltime" />Fulltime</label><br />
-            <label><input type="checkbox" name="stage" />Stage</label><br />
-            <label><input type="checkbox" name="traineeship" />Traineeship</label><br />
-        </form>
+        <div>
+            <label><input type="checkbox" name="parttime" [(ngModel)]="parttime" />Parttime</label><br />
+            <label><input type="checkbox" name="fulltime" [(ngModel)]="fulltime" />Fulltime</label><br />
+            <label><input type="checkbox" name="stage" [(ngModel)]="stage" />Stage</label><br />
+            <label><input type="checkbox" name="traineeship" [(ngModel)]="traineeship" />Traineeship</label><br />
+        </div>
       </div>
       <div class="filterVacancies" id="fifthFilterSectionVacancies">
           <h3 class="filterTitle">Experience</h3>
-          <form>
-              <select size="1">
-                <option value="2" selected> 0-2 jaar</option>
-                <option value="5"> 3-5 jaar</option>
-                <option value="10"> 6-10 jaar</option>
-                <option value="11"> >10 jaar</option>
+          <div>
+              <select size="1" name="experience" [(ngModel)]="experience">
+                <option selected value="0-2"> 0-2 jaar</option>
+                <option value="3-5"> 3-5 jaar</option>
+                <option value="6-10"> 6-10 jaar</option>
+                <option value="10+"> >10 jaar</option>
               </select>
-          </form>
+          </div>
       </div>     
-  </div>
+  </form>
   <div id="vacSectionVacancies">
     <div>
+
+      <div *ngIf="curentVacancies.length===0" class="no-vacancy">
+        <h1>No results for your request</h1>
+      </div>
       <div *ngFor="let vacancy of curentVacancies" class="vacancyVacancies" [routerLink]="['/vacatures', vacancy.id]">
         <p class="salary bold">{{vacancy.salary}}</p>
-        <p class="jobTitle">{{vacancy.jobTitle}}</p>
+        <p class="jobTitle">{{vacancy.title}}</p>
         <p class="bold">{{vacancy.functionTitle}}</p>
-        <p>{{vacancy.company}}</p>
-        <p class="bold"><i class="glyphicon glyphicon-map-marker"></i>{{vacancy.place}}</p>
-        <p>{{vacancy.education}} {{vacancy.contactOfService}}</p>
-        <p>{{vacancy.functionDescription}}</p>
+        <p>{{vacancy.companyName}}</p>
+        <p class="bold"><i class="glyphicon glyphicon-map-marker"></i>{{vacancy.location}}</p>
+        <p>{{vacancy.education}} {{vacancy.contractType}}</p>
+        <p>{{vacancy.whatWeOffer}}</p>
         <p>{{vacancy.contactInformation}}</p>
       </div>
-      <div class="navSection">
+      <div class="navSection" *ngIf="curentVacancies.length!==0">
         <span (click)="rerender(page.num)" *ngFor="let page of pageCountObj" class="pageNav" [ngClass]="{'activ': curentPage===page.num }">
           {{page.num}}
         </span>
